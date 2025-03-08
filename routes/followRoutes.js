@@ -8,6 +8,8 @@ const {
 const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 
+router.use(cors());
+
 // Richiesta di follow da parte di un utente (solo per i seguiti)
 router.post("/", authMiddleware, followPage);
 

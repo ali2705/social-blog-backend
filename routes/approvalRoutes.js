@@ -4,6 +4,8 @@ const { getPendingComments } = require("../models/commentModel");
 const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 
+router.use(cors());
+
 // Recupera tutti i contenuti in attesa di approvazione
 router.get("/", authMiddleware, async (req, res) => {
   try {

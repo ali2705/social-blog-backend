@@ -8,6 +8,8 @@ const {
 const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 
+router.use(cors());
+
 // Creazione di un commento
 router.post("/", authMiddleware, createComment);
 

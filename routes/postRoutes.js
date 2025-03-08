@@ -12,6 +12,8 @@ const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 const upload = require("../middleware/upload");
 
+router.use(cors());
+
 // Creazione di un post (solo per i proprietari)
 router.post("/", authMiddleware, upload.single("immagine"), createPost);
 

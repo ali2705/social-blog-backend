@@ -12,6 +12,8 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path"); // Ensure path is required if you're using path.extname
 
+router.use(cors());
+
 // Define the storage configuration first
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

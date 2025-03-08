@@ -14,7 +14,13 @@ const path = require("path");
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
