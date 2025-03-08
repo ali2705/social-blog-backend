@@ -11,6 +11,7 @@ const {
 const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 const upload = require("../middleware/upload");
+const cors = require("cors");
 
 router.use(cors());
 

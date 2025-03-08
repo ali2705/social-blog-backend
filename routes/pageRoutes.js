@@ -11,6 +11,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path"); // Ensure path is required if you're using path.extname
+const cors = require("cors");
 
 router.use(cors());
 

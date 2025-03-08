@@ -7,6 +7,7 @@ const {
 } = require("../controllers/commentController");
 const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
+const cors = require("cors");
 
 router.use(cors());
 
