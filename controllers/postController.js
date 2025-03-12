@@ -25,6 +25,18 @@ const createPost = async (req, res) => {
   }
 };
 
+const getAllPosts = async (req, res) => {
+  try {
+    const [posts] = await db.query(
+      "SELECT id, titolo, contenuto, immagine_copertina, data_creazione FROM posts WHERE stato_approvazione = 'approvato' ORDER BY data_creazione DESC"
+    );
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error("Errore nel recupero dei post:", error);
+    res.status(500).json({ message: "Errore nel recupero degli articoli." });
+  }
+};
+
 // Recupera il feed di un utente
 const getUserFeed = async (req, res) => {
   const { id } = req.user; // ID dell'utente autenticato
@@ -210,4 +222,5 @@ module.exports = {
   getUserFeed,
   toggleLike,
   checkLikeStatus,
+  getAllPosts,
 };

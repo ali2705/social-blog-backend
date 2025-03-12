@@ -18,6 +18,9 @@ router.use(cors());
 // Creazione di un post (solo per i proprietari)
 router.post("/", authMiddleware, upload.single("immagine"), createPost);
 
+// Ottiene tutti i post
+router.get("/all", getAllPosts);
+
 // Ottiene tutti i post in attesa di approvazione (solo admin)
 router.get("/pending", authMiddleware, getPendingPosts);
 
