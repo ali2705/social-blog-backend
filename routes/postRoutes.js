@@ -7,6 +7,7 @@ const {
   getUserFeed,
   toggleLike,
   checkLikeStatus,
+  getAllPosts,
 } = require("../controllers/postController");
 const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
